@@ -15,5 +15,17 @@ public class School {
       System.out.println("Ooops, that doesn't seem to work");
     }
     System.out.println("Program still running!");
+
+    Student sheila = null;
+    try {
+      System.out.println("about to make Sheila");
+      sheila = new Student("Sheila", 3.9);
+      System.out.println("Sheila created");
+      System.out.println("Sheila's name is " + sheila.name);
+    } catch (IllegalArgumentException ie) {
+      System.out.println(ie);
+//      System.out.println(sheila.name);
+    }
+    System.out.println(sheila.name);
   }
 }
