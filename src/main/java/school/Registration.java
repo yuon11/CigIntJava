@@ -22,8 +22,7 @@ public class Registration {
         String gpaText = readALine(input);
         double gpa = Double.parseDouble(gpaText);
         Student s = new Student(name, gpa);
-        System.out.println("Student created, name is "
-            + s.name + " gpa is " + s.gpa);
+        System.out.println("Created: " + Student.asText(s));
         success = true;
       } catch (IllegalArgumentException e) {
 //      e.printStackTrace();
@@ -33,7 +32,10 @@ public class Registration {
       }
     }
     System.out.println("Continuing");
-    System.exit(3);
-    System.out.println("Really???");
+
+
+
+//    System.exit(3);
+//    System.out.println("Really???");
   }
 }
