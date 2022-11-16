@@ -1,0 +1,3 @@
+Head First Java, Kathy Sierra, Bert Bates
+
+Effective Java, Joshua Bloch

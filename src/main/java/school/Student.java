@@ -62,6 +62,10 @@ public class Student {
     return "Student: name=" + this.name + ", gpa=" + this.gpa;
   }
 
+  public String toString() {
+    return /*this.*/asText();
+  }
+
 //  public static void setName(Student s, String n) {
 //  public void setName(@Interesting Student this, String n) {
 //  public void setName(/*Student this, */String n) {

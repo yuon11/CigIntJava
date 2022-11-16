@@ -12,6 +12,6 @@
    - you can use this as your "get pretty formatted text"
    - also if you do s.o.p(aStudent) or s.o.p("Hello " + aStudent) it will "magically" use your toString method
  - make "many" students (in an ArrayList<Student>)
- - use for (x y : z) loop form when printing
+ - use for (x y : z) loop form when printing *** this works with ArrayList!!!
 WHEN DONE RAISE HAND (and leave it up :)
 IF STUCK, no more than 90 seconds before you ask for help
