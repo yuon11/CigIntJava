@@ -21,8 +21,8 @@ public class Student {
     // code here has access to name, gpa, and something
   }
 
-//  public Student(String name, double gpa, ArrayList<String> courses) {
-  public Student(String name, double gpa, String ... courses) {
+  //  public Student(String name, double gpa, ArrayList<String> courses) {
+  public Student(String name, double gpa, String... courses) {
 //    if (!isValid(name, gpa)) // logical inverse
     if (isValid(name, gpa)) {
       this.name = name;
@@ -66,7 +66,42 @@ public class Student {
     return /*this.*/asText();
   }
 
-//  public static void setName(Student s, String n) {
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Student student = (Student) o;
+
+    if (Double.compare(student.gpa, gpa) != 0) return false;
+    if (!name.equals(student.name)) return false;
+    return courses.equals(student.courses);
+  }
+
+  @Override
+  public int hashCode() {
+    int result;
+    long temp;
+    result = name.hashCode();
+    temp = Double.doubleToLongBits(gpa);
+    result = 31 * result + (int) (temp ^ (temp >>> 32));
+    result = 31 * result + courses.hashCode();
+    return result;
+  }
+//  public boolean equals(Object obj) {
+////    if (obj instanceof Student) { // NOT SAFE for equality!!!
+//    if (obj.getClass() == this.getClass()) {
+//      Student other = (Student) obj;
+//      return
+//          this.name.equals(other.name) &&
+//          this.gpa == other.gpa &&
+//          this.courses.equals(other.courses);
+//    } else {
+//      return false;
+//    }
+//  }
+
+  //  public static void setName(Student s, String n) {
 //  public void setName(@Interesting Student this, String n) {
 //  public void setName(/*Student this, */String n) {
   public void setName(String n) {
@@ -79,7 +114,7 @@ public class Student {
     }
   }
 
-//  public static String getName(Student s) {
+  //  public static String getName(Student s) {
   public String getName(Student this) {
 //    return s.name;
     return this.name;
