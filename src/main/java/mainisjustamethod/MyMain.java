@@ -25,7 +25,7 @@ public class MyMain {
         Method m = cl.getMethod("main", String[].class);
         System.out.println(m);
         String [] argValues = new String[]{"Hello"};
-        m.invoke(null, argValues);
+        m.invoke(null, (Object)argValues);
       }
     } catch (FileNotFoundException fnfe) {
       System.out.println("couldn't find " + fnfe.getMessage());
